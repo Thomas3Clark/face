@@ -3,7 +3,6 @@
   submitHandler();
 })();
 
-
 function submitHandler() {
   var $submitButton = $('#submitButton');
 
@@ -19,9 +18,8 @@ function loadOptions() {
   var $weatherOn = $('#weatherOn');
   var $tempFormat = document.getElementById('tempFormat');
 
-
   if (localStorage.weather) {
-    $weatherOn[0].checked = localStorage.weather;
+    $weatherOn[0].checked = localStorage.weather === 'true';
     $tempFormat.value = localStorage.temperature_format;
   }
 }
@@ -32,11 +30,11 @@ function getAndStoreConfigData() {
 
   var options = {
     weather: $weatherOn[0].checked,
-    temperature_format: $tempFormat.value
+    temperature_format: $tempFormat.value,
   };
 
-  localStorage.weather = options.backgroundColor;
-  localStorage.temperature_format = options.tempFormat;
+  localStorage.weather = options.weather;
+  localStorage.temperature_format = options.temperature_format;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
