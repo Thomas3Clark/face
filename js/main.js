@@ -16,24 +16,34 @@ function submitHandler() {
 
 function loadOptions() {
   var $weatherOn = $('#weatherOn');
+  var $gpsOn = $('#gpsOn');
+  var $city = document.getElementById('city');
   var $tempFormat = document.getElementById('tempFormat');
 
   if (localStorage.weather) {
     $weatherOn[0].checked = localStorage.weather === 'true';
+    $gpsOn[0].checked = localStorage.gps === 'true';
+    $city.value = localStorage.manual_city;
     $tempFormat.value = localStorage.temperature_format;
   }
 }
 
 function getAndStoreConfigData() {
   var $weatherOn = $('#weatherOn');
+  var $gpsOn = $('#gpsOn');
+  var $city = document.getElementById('city');
   var $tempFormat = document.getElementById('tempFormat');
 
   var options = {
     weather: $weatherOn[0].checked,
+    gps: $gpsOn[0].checked,
+    manual_city: $city.value,
     temperature_format: $tempFormat.value,
   };
 
   localStorage.weather = options.weather;
+  localStorage.gps = options.gps;
+  localStorage.manual_city = options.manual_city;
   localStorage.temperature_format = options.temperature_format;
 
   console.log('Got options: ' + JSON.stringify(options));

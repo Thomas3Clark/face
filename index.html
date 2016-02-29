@@ -12,12 +12,26 @@
   </div>
 
   <div class='item-container'>
-    <div class='item-container-header'>Settings</div>
+    <div class='item-container-header'>Weather</div>
     <div class='item-container-content'>
       <label class='item'>
         Show Weather
-        <input id='weatherOn' type='checkbox' class='item-checkbox'>
+        <input id='weatherOn' type='checkbox' class='item-toggle'>
       </label>
+
+      <label class="item">
+        Use Location-based Weather (GPS)
+        <input id='gpsOn' type="checkbox" class="item-checkbox" name="toggle-1" checked>
+      </label>
+
+      <label class="item">
+        Manual Location (If GPS is off)
+        <div class="item-input-wrapper">
+          <input id='city' type="text" class="item-input" name="input-1" placeholder="Enter a city">
+        </div>
+      </label>
+
+
       <label class='item'>
         Temperature Format<br>
         <form>
