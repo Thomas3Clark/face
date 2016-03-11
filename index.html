@@ -63,7 +63,36 @@
     </div>
   </div>
 
+
+  <center><button id='donatebutton'>Donate</button></center>
+
+  <div class="item-container" id='donate'>
+    <div class="item-container-content">
+      <div class="item">
+        Hey there,<br>
+          I'm one of those guys that likes to program instead of partying on Friday nights.
+          I'm currently working two part time jobs and studying as a college student so any donation is welcome!
+          You'll also encourage me to make more content for the Pebble! :)<br>
+          Thanks for the support!<br>
+          <center><a href="https://www.paypal.me/zameryth"><img id='donate' src="paypal.gif"></a></center>
+      </div>
+    </div>
+  </div>
+
+
   <script src='bower_components/pebble-slate/dist/js/slate.min.js'></script>
   <script src='js/main.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(donate).hide();
+
+      $("button").click(function(){
+          $(donate).show();
+          $(donatebutton).hide();
+          window.scrollTo(0,document.body.scrollHeight);
+        });
+  });
+  </script>
 </body>
 </html>
