@@ -22,6 +22,7 @@ function loadOptions() {
   var $apiid = document.getElementById('apiid');
   var $emblem = document.getElementById('emblem');
   var $themeColor = document.getElementById('themeColor');
+  var $contrastOn = $('#contrastOn');
 
   if (localStorage.weather) {
     $weatherOn[0].checked = window.localStorage.weather === 'true';
@@ -31,6 +32,7 @@ function loadOptions() {
     $tempFormat.value = window.localStorage.temperature_format;
     $emblem.value = window.localStorage.emblem;
     $themeColor.value = window.localStorage.themeColor;
+    $contrastOn[0].checked = window.localStorage.contrastOn === 'true';
   }
 }
 
@@ -42,6 +44,7 @@ function getAndStoreConfigData() {
   var $apiid = document.getElementById('apiid');
   var $emblem = document.getElementById('emblem');
   var $themeColor = document.getElementById('themeColor');
+  var $contrastOn = $('#contrastOn');
 
   var options = {
     weather: $weatherOn[0].checked,
@@ -51,6 +54,7 @@ function getAndStoreConfigData() {
     weather_api: $apiid.value,
     emblem: $emblem.value,
     themeColor: $themeColor.value,
+    contrastOn: $contrastOn[0].checked,
   };
 
   window.localStorage.weather = options.weather;
@@ -60,6 +64,7 @@ function getAndStoreConfigData() {
   window.localStorage.weather_api = options.weather_api;
   window.localStorage.themeColor = options.themeColor;
   window.localStorage.emblem = options.emblem;
+  window.localStorage.emblem = options.contrastOn;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
