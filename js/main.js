@@ -64,7 +64,7 @@ function getAndStoreConfigData() {
   window.localStorage.weather_api = options.weather_api;
   window.localStorage.themeColor = options.themeColor;
   window.localStorage.emblem = options.emblem;
-  window.localStorage.emblem = options.contrastOn;
+  window.localStorage.contrastOn = options.contrastOn;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
